@@ -46,31 +46,3 @@ filter_blue <- function(rgb_vector,cut_off = 127) {
     return(c(0, 0, 0))
   }
 }
-
-
-filter_bitmap <- function(bitmap, filter, ...){
-  raw_bitmap <- as.integer(bitmap) #I will first convert the bitmap to make it easier to work with.
-  dims <- dim(raw_bitmap)
-  #Making sure the input is appropriate
-  if(length(dims) != 3) {
-    stop("The input bitmap must be a 3D array")
-  }
-
-  if(dims[3] != 3){
-    stop("The input bitmap must have 3 channels")
-  }
-
-  # loop over rows and columns
-  for (i in 1:dims[1]){
-    for (j in 1:dims[2]){
-      bitmap[i, j, ] <- filter(bitmap[i, j, ])
-    }
-  }
-  #normalising values to 0-255
-  bitmap <- pmax(pmin(bitmap, 255), 0)
-  rgb_matrix <- apply(bitmap, c(1, 2), function(pixel) {
-    rgb(pixel[1], pixel[2], pixel[3], maxColorValue = 255)
-  })
-  img <- image_read(as.raster(rgb_matrix))
-  return(img)
-}
