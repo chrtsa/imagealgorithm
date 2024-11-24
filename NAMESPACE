@@ -1,1 +1,3 @@
 exportPattern("^[[:alpha:]]+")
+import(magick)
+importFrom("grDevices", "as.raster", "rgb")

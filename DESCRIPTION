@@ -1,11 +1,10 @@
 Package: imagealgorithm
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An algorithm used on images to convert the colors of each pixel to grey, red, green or blue.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Christina Tsagkogianni <christina.tsagkogianni.2@ki.se>
+Maintainer: Christina Tsagkogianni <christina.tsagkogianni.2@ki.se>
+Description: I wrote a few filters that, after applied to an image, it changes its colour scheme
+License: MIT
 Encoding: UTF-8
 LazyData: true
