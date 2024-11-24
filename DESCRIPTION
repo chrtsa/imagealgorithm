@@ -1,10 +1,13 @@
 Package: imagealgorithm
 Type: Package
-Title: An algorithm used on images to convert the colors of each pixel to grey, red, green or blue.
+Title: An algorithm used on images to convert the colors of each pixel to grey, red, green or blue
 Version: 0.1.0
 Author: Christina Tsagkogianni <christina.tsagkogianni.2@ki.se>
 Maintainer: Christina Tsagkogianni <christina.tsagkogianni.2@ki.se>
-Description: I wrote a few filters that, after applied to an image, it changes its colour scheme
+Description: A function that takes an image as input and returns the same image with the colors of each pixel converted to grey, red, green or blue, depending on the filter selected. The package also contains 5 filters (bw, blue, green, red, grey) that can be used to change the colour of the input image.
 License: MIT
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.6.0), magick, grDevices
+Imports: magick, grDevices
+RoxygenNote: 7.3.2
