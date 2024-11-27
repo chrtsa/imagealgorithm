@@ -2,7 +2,7 @@
 % Please edit documentation in R/imagefilter.R
 \name{blue}
 \alias{blue}
-\title{Apply a Blue Filter to an Image}
+\title{Blue filter}
 \usage{
 blue(rgb_vector, cut_off = 127)
 }

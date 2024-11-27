@@ -1,13 +1,8 @@
-#'@title Image filter
-#'Applies a colour filter to an image
-#'Requires the "magick" package to work
-#' Apply Grey Filter to an Image
-#'
-#' This function takes an RGB vector and applies a greyscale transformation
-#'
-#' @param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
-#' @return A numeric value representing the grey value of the pixel.
-#' @export
+#'@title Greyscale transformation
+#'@description This function takes an RGB vector and applies a greyscale transformation
+#'@param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
+#'@return A numeric value representing the grey value of the pixel.
+#'@export
 grey <- function(rgb_vector){
   R <- as.integer(rgb_vector[1])
   G <- as.integer(rgb_vector[2])
@@ -15,10 +10,8 @@ grey <- function(rgb_vector){
   grey <- round(R * 0.299 + G * 0.587 + B * 0.114)
   return(grey)
 }
-#' Apply Grey Filter to an Image
-#'
-#' This function takes an RGB vector and transforms it to black and white
-#'
+#' @title Black and white filter
+#' @description This function applies a black and white filter to an RGB pixel based on a grey cutoff value.
 #' @param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
 #' @param cut_off Numeric value, the threshold to determine if the pixel should be black or white (default is 127).
 #' @return A numeric value .
@@ -31,22 +24,18 @@ bw <- function(rgb_vector, cut_off = 127){
     return(c(255, 255, 255))
   }
 }
-#' Apply Red Filter to an Image
-#'
-#' This function applies a red filter to an RGB pixel based on a grey cutoff value.
-#'
+#'@title Red filter
+#'@description This function applies a red filter to an RGB pixel based on a grey cutoff value.
 #' @param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
 #' @param cut_off Numeric value, the threshold to determine if the pixel should be red (default is 127).
 #' @return A numeric vector of length 3, either c(255, 0, 0) for red or c(0, 0, 0) for black.
 #' @export
 red <- function(rgb_vector, cut_off = 127)
-  #' Apply Green Filter to an Image
-  #'
-  #' This function applies a green filter to an RGB pixel based on a grey cutoff value.
-  #'
-  #' @param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
-  #' @param cut_off Numeric value, the threshold to determine if the pixel should be green (default is 127).
-  #' @return A numeric vector of length 3, either c(0, 128, 0) for green or c(0, 0, 0) for black.
+#' @title Green filter
+#' @description This function applies a green filter to an RGB pixel based on a grey cutoff value.
+#' @param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
+#' @param cut_off Numeric value, the threshold to determine if the pixel should be green (default is 127).
+#' @return A numeric vector of length 3, either c(0, 128, 0) for green or c(0, 0, 0) for black.
 #' @export
 green <- function(rgb_vector, cut_off = 127) {
   grey <- as.integer(grey(rgb_vector))
@@ -56,14 +45,11 @@ green <- function(rgb_vector, cut_off = 127) {
     return(c(0, 0, 0))
   }
 }
-#' Apply a Blue Filter to an Image
-#'
-#' This function applies a blue filter to an RGB pixel based on a grey cutoff value.
-#'
+#' @title Blue filter
+#' @description This function applies a blue filter to an RGB pixel based on a grey cutoff value.
 #' @param rgb_vector A numeric vector of length 3 representing the RGB values of a pixel.
 #' @param cut_off Numeric value, the threshold to determine if the pixel should be blue (default is 127).
 #' @return A numeric vector of length 3, either c(0, 0, 255) for blue or c(0, 0, 0) for black.
-#' @export
 #' @export
 blue <- function(rgb_vector,cut_off = 127) {
   grey <- as.integer(grey(rgb_vector))
@@ -73,15 +59,13 @@ blue <- function(rgb_vector,cut_off = 127) {
     return(c(0, 0, 0))
   }
 }
-
-
-#' Apply a Filter to an Image
-#'
-#' This function takes an image and applies a filter to each pixel.
+#' @title Apply a filter to the image
+#' @description This function takes an image and applies the selected filter to each pixel.
 #' The filter is applied by passing each pixel through the provided function.
 #'
 #' @param image A file path to an image that will be processed.
 #' @param filter A function that processes each RGB pixel of the image.
+#'
 #' @return An image object with the filter applied.
 #' @details The function uses the magick::image_read() function to read and process the image
 #'Ensure the package is installed and loaded

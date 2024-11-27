@@ -28,8 +28,7 @@ devtools::install_github("chrtsa/imagealgorithm")
 ```
 
 ## Example
-
-This is a basic example which shows you how to solve a common problem:
+A basic example that shows how to apply the grayscale filter to an image:
 
 ```R
 library(imagealgorithm)

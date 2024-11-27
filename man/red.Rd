@@ -2,7 +2,7 @@
 % Please edit documentation in R/imagefilter.R
 \name{red}
 \alias{red}
-\title{Apply Red Filter to an Image}
+\title{Red filter}
 \usage{
 red(rgb_vector, cut_off = 127)
 }
@@ -18,4 +18,6 @@ A numeric vector of length 3, either c(0, 128, 0) for green or c(0, 0, 0) for bl
 }
 \description{
 This function applies a red filter to an RGB pixel based on a grey cutoff value.
+
+This function applies a green filter to an RGB pixel based on a grey cutoff value.
 }
